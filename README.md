@@ -1,6 +1,23 @@
 # Tanneurs Bakery
 
-A small bakery showcase site, built only with Loopress resources: no custom plugin, no code typed in wp-admin. It stands in for a real production site in the Claude Code video (`video/videos/claude-code-local-workflow/`), and shows that a Loopress project reproduces a whole site on any environment.
+A small bakery showcase site, built only with [Loopress](https://loopress.dev) resources: no custom plugin, no code typed in wp-admin. It plays a client site in the Loopress videos, and shows that a Loopress project reproduces a whole site on any environment.
+
+## Videos
+
+Each video starts from a tag of this repo. Check it out to get exactly the code shown on screen:
+
+| Video | Tag | What you do yourself |
+|-------|-----|----------------------|
+| Claude Code + Loopress | `claude-code-local-workflow` | Ask Claude Code to add allergens to the products |
+| Deploy without overwriting production (coming soon) | `deploy-without-overwriting-production` | Bump the ACF pin in `loopress.json`, ship it through CI, staging and production |
+
+```bash
+git clone https://github.com/loopress/demo-bakery.git
+cd demo-bakery
+git checkout claude-code-local-workflow
+```
+
+## What's inside
 
 | Resource | Where |
 |----------|-------|
@@ -13,7 +30,7 @@ A small bakery showcase site, built only with Loopress resources: no custom plug
 | Product fields (price, weight) | `acf/field-groups/` |
 | Site title, tagline, hours and phone (`bakery_info`) | `options/` |
 | `[bakery_products]` cards, used by the home and "our breads" pages | `hooks/products.php` |
-| `[bakery_hours]` and `[bakery_phone]`, used by the pages and the footer | `hooks/bakery-info.php` |
+| `[bakery_hours]` and `[bakery_phone]`, used by the pages and the footer, and the Settings > Bakery info page the owner edits them in | `hooks/bakery-info.php` |
 
 Loopress ships configuration and code, not content. The products themselves (posts, categories, photos) live in `content/` and are seeded once per site with `content/seed.py`.
 

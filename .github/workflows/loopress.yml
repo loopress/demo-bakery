@@ -1,0 +1,20 @@
+name: Loopress
+
+# Pull requests, and main once merged: a branch push alone would run the same checks twice on a PR.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # A throwaway WordPress on the runner, with the Loopress CLI already configured for it.
+      - uses: loopress/setup-ci@main
+      - run: lps push --yes
+      # Fails on a known vulnerability in a pinned plugin version.
+      - run: lps plugin audit
+      # Exits 1 if anything pushed above did not land: the site now matches Git.
+      - run: lps diff
