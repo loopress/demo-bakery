@@ -24,7 +24,7 @@ git checkout claude-code-local-workflow
 | Pages (home, our breads, about, visit us) | `pages/` |
 | Page template, header and footer | `theme/templates/`, `theme/parts/` |
 | Theme CSS, hero photos | `theme/css/`, `theme/img/` |
-| Global Styles (palette, Vollkorn + Manrope) | `theme/twentytwentyfive-loopress-global-styles.json` |
+| Global Styles (palette, Vollkorn + Manrope) | `theme/twentytwentyfive-global-styles.json` |
 | ACF, pinned | `loopress.json` (`plugins`) |
 | `product` post type and `product_category` taxonomy | `cpt/`, `taxonomies/` |
 | Product fields (price, weight) | `acf/field-groups/` |
